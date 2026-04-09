@@ -11,10 +11,10 @@ const Drawer = createDrawerNavigator();
 export default function DrawerRoutes() {
     return (
         <Drawer.Navigator>
-            <Drawer.Screen name="Home" component={HomeScreen} options={{title: ""}}/>
-            <Drawer.Screen name="Entidades" component={EntidadeScreen} options={{title: ""}}/>
-            <Drawer.Screen name="Contas a Pagar" component={ContasPagarScreen} options={{title: ""}}/>
-            <Drawer.Screen name="Contas a Receber" component={ContasReceberScreen} options={{title: ""}}/>
+            <Drawer.Screen name="Home" component={HomeScreen}/>
+            <Drawer.Screen name="Entidades" component={EntidadeScreen} />
+            <Drawer.Screen name="Contas a Pagar" component={ContasPagarScreen} />
+            <Drawer.Screen name="Contas a Receber" component={ContasReceberScreen} />
         </Drawer.Navigator>
     )
 
