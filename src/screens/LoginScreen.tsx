@@ -1,9 +1,88 @@
-import { View,Text } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { TextInput } from "react-native-gesture-handler";
 
-export default function LoginScreen() {
+export default function LoginScreen({ navigation }) { // Adicionado o parâmetro navigation
     return (
-        <View>
-            <Text>Login</Text>
+        <View style={styles.container}>
+            <View style={styles.center}> {/* Corrigido de StyleSheet para styles */}
+                <Text style={styles.title}>Control</Text>
+                
+                <TextInput
+                    placeholder="E-Mail"
+                    style={styles.input} 
+                />
+
+                <TextInput
+                    placeholder="Senha"
+                    secureTextEntry
+                    style={styles.input} 
+                />
+
+                <TouchableOpacity style={styles.button}> {/* Corrigido: era buttonText */}
+                    <Text style={styles.buttonText}>Entrar</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={() => navigation.navigate("Cadastro")}>
+                    <Text style={styles.link}> Não tem conta ? Criar Conta</Text>
+                </TouchableOpacity>
+            </View>
+
+            <TouchableOpacity 
+                style={styles.aboutButton}  /* Corrigido de StyleSheet para styles */
+                onPress={() => navigation.navigate("Sobre")}
+            >
+                <Text style={styles.aboutText}> {/* Corrigido de StyleSheet para styles */}
+                    Sobre o aplicativo
+                </Text>
+            </TouchableOpacity>
         </View>
-    )
+    );
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: "#fff",
+        padding: 20
+    },
+    center: {
+        flex: 1,
+        justifyContent: "center"
+    },
+    title: {
+        fontSize: 32,
+        fontWeight: "bold",
+        marginBottom: 40,
+        textAlign: "center"
+    },
+    input: {
+        borderWidth: 1,
+        borderColor: "#ccc",
+        borderRadius: 8,
+        padding: 12,
+        marginBottom: 15
+    },
+    button: {
+        backgroundColor: "#1E88E5",
+        padding: 15,
+        borderRadius: 8,
+        alignItems: "center"
+    },
+    buttonText: {
+        color: "#fff",
+        fontWeight: "bold"
+    },
+    link: {
+        marginTop: 15,
+        textAlign: "center",
+        color: "#1E88E5"
+    },
+    aboutButton: {
+        alignItems: "center",
+        marginBottom: 20
+    },
+    aboutText: {
+        color: "#999",
+        fontSize: 14
+    }
+});
