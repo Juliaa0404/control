@@ -1,10 +1,10 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 
-export default function LoginScreen({ navigation }) { // Adicionado o parâmetro navigation
+export default function LoginScreen({ navigation } : any ) { 
     return (
         <View style={styles.container}>
-            <View style={styles.center}> {/* Corrigido de StyleSheet para styles */}
+            <View style={styles.center}>
                 <Text style={styles.title}>Control</Text>
                 
                 <TextInput
@@ -18,7 +18,7 @@ export default function LoginScreen({ navigation }) { // Adicionado o parâmetro
                     style={styles.input} 
                 />
 
-                <TouchableOpacity style={styles.button}> {/* Corrigido: era buttonText */}
+                <TouchableOpacity style={styles.button}> 
                     <Text style={styles.buttonText}>Entrar</Text>
                 </TouchableOpacity>
 
@@ -28,10 +28,10 @@ export default function LoginScreen({ navigation }) { // Adicionado o parâmetro
             </View>
 
             <TouchableOpacity 
-                style={styles.aboutButton}  /* Corrigido de StyleSheet para styles */
+                style={styles.aboutButton} 
                 onPress={() => navigation.navigate("Sobre")}
             >
-                <Text style={styles.aboutText}> {/* Corrigido de StyleSheet para styles */}
+                <Text style={styles.aboutText}> 
                     Sobre o aplicativo
                 </Text>
             </TouchableOpacity>
